@@ -14,7 +14,7 @@ namespace Recursion
             int choice = 0;
             while (choice == 0) 
             {
-                Console.Write("Выберите действие(1 - факториал, 2 - степень, 3 - Фибоначчи): ");
+                Console.Write("Выберите действие(1 - факториал, 2 - степень, 3 - количество чисел из ряда Фибоначчи): ");
                 choice = Convert.ToInt32(Console.ReadLine());
             }
 
@@ -33,7 +33,8 @@ namespace Recursion
                     break;
                 case 3:
                     int x = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine(Fibonacci(x));
+                    Console.Write("_____\n");
+                    Fibonacci_2(x);
                     break;
                 default:
                     break;
@@ -71,6 +72,13 @@ namespace Recursion
         static int Fibonacci(int n)
         {
             return n > 1 ? Fibonacci(n - 1) + Fibonacci(n - 2) : n;
+        }
+        static void Fibonacci_2(int n)
+        {
+            for (int i = 0; i <= n; i++)
+            {
+                Console.WriteLine(i + " = " + Fibonacci(i)); 
+            }
         }
     }
 }
